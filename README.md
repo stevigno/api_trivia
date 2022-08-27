@@ -397,11 +397,11 @@ The error codes currently returned are:
 ```json
 {
   "question": {
-    "answer": "George Washington Carver",
+    "answer": "Scarab",
     "category": 4,
-    "difficulty": 2,
-    "id": 12,
-    "question": "Who invented Peanut Butter?"
+    "difficulty": 4,
+    "id": 23,
+    "question": "Which dung beetle was worshipped by the ancient Egyptians?"
   },
   "success": true
 }
