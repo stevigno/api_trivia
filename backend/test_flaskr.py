@@ -123,12 +123,14 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(data["success"], False)
         self.assertEqual(data["message"], "unprocessable")
 
-    def test_sent_valid_page(self):
-        res = self.client().get('/questions?page=300', json={'answer': 'Gilbert Cédric'})
-        data = json.loads(res.data)
-        self.assertEqual(res.status_code, 404)
+    def test_invalid_category_id(self):
+        response = self.client().get('/categories/200/questions')
+        data = json.loads(response.data)
+
+        # Assertions to ensure 422 error is returned
+        self.assertEqual(response.status_code, 422)
         self.assertEqual(data['success'], False)
-        self.assertEqual(data['message'], ' resource not found')
+
 
 
 # Make the tests conveniently executable
