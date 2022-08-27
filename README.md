@@ -223,7 +223,7 @@ The error codes currently returned are:
 - General:
   - Deletes a question by id form the url parameter.
 
-- Sample: `curl http://127.0.0.1:5000/questions/6 -X DELETE`
+- Sample: `curl http://127.0.0.1:5000/questions/5 -X DELETE`
 
 ```json
        {
