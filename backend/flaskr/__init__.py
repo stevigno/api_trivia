@@ -63,7 +63,7 @@ def create_app(test_config=None):
     def all_questions():
         questions = Question.query.order_by(Question.id).all()
         cat = Category.query.order_by(Category.id).all()
-        current_questions = pagination(request, questions)
+        current_questions = pagination(request, questions, QUESTIONS_PER_PAGE)
         cat_format = {}
         if len(current_questions) is None:
             abort(404)
@@ -292,7 +292,7 @@ def create_app(test_config=None):
     return app
 
 
-def pagination(request, selection):
+def pagination(request, selection, QUESTIONS_PER_PAGE):
     page = request.args.get("page", 1, type=int)
     start = (page - 1) * QUESTIONS_PER_PAGE
     end = start + QUESTIONS_PER_PAGE
