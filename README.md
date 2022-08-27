@@ -416,7 +416,7 @@ The error codes currently returned are:
     }
   ],
   "success": true,
-  "total_questions": 20
+  "total_questions": 18
 }
 ```
 
